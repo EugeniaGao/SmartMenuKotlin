@@ -15,15 +15,6 @@
             android:layout_height="wrap_content">
 
         </com.viewpagerindicator.TabPageIndicator>
-        <ImageButton
-            android:id="@+id/ib_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:padding="5dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/news_cate_arr"
-            android:background="#f0f"/>
     </RelativeLayout>
 
     <androidx.viewpager.widget.ViewPager

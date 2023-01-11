@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:background="#000">
+    android:layout_height="300dp"
+    android:layout_margin="10dp">
 <ImageView
-    android:id="@+id/iv_arrow"
-    android:layout_margin="20dp"
-    android:src="@drawable/menu_arr_normal"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+    android:id="@+id/iv_menu"
+    android:layout_height="0dp"
+    android:layout_weight="5"
+    android:background="@mipmap/icon"
+    android:layout_width="match_parent">
+
+</ImageView>
     <TextView
-        android:id="@+id/tv_menu_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="标题"
-        android:layout_gravity="center_vertical"
-        android:textSize="18sp"
-        android:textColor="#fff"/>
+        android:id="@+id/menuName"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="红烧肉"
+        tools:ignore="Suspicious0dp" />
+
+    <TextView
+        android:id="@+id/createTime"
+        android:text="2023年5月1日"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
 
 </LinearLayout>

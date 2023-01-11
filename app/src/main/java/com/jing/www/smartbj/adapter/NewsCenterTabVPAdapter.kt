@@ -19,15 +19,9 @@ import com.jing.www.smartbj.utils.*
  */
 class NewsCenterTabVPAdapter(//通过构造传入数据 //设置适配器,该ViewPAger要存储Views,beanList数据
         var views: List<NewsCenterContentTabPager?>?,
-        ///**
-    //         * id : 10007
-    //         * title : 北京
-    //         * type : 1
-    //         * url : /10007/list_1.json
-    //         */
+
         private val tabBeenList: List<String>?) : PagerAdapter() {
     override fun getCount(): Int {
-//        return if (views != null) views!!.size else 0
         return tabBeenList!!.size
     }
 
@@ -40,12 +34,8 @@ class NewsCenterTabVPAdapter(//通过构造传入数据 //设置适配器,该Vie
         val view = views!![position]!!.view
         container.addView(view)
 
-        //之前 是将头放进去,现在要加载网络的主体内容:调用fragment中的方法
-        //通过position得到对应的view,转换成对应的Basepager,即新闻主体的碎片
         val tabPager = views!![position]
-//        val url = Constant.HOST + tabBeenList!![position]?.url//todo 替换成
-//        Log.d(ContentValues.TAG, "instantiateItem: url$url")
-//        tabPager!!.loadNetData(url)
+
         return view!!
     }
 

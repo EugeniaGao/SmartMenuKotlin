@@ -40,11 +40,11 @@ class MainActivity : FragmentActivity(), RadioGroup.OnCheckedChangeListener {
     var slidingMenu: SlidingMenu? = null
     var newsCenterMenuBeanList: List<NewsCenterBean.NewsCenterMenuBean>? = null
 
-    private var adapter: MenuAdapter? = null
+
     @JvmName("setNewsCenterMenuBeanList1")
     fun setNewsCenterMenuBeanList(newsCenterMenuBeanList: List<NewsCenterBean.NewsCenterMenuBean>?) {
         this.newsCenterMenuBeanList = newsCenterMenuBeanList
-//        initRecycleView()
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,15 +55,7 @@ class MainActivity : FragmentActivity(), RadioGroup.OnCheckedChangeListener {
         initViewPager()
     }
 
-    private fun initRecycleView() {
-        //1.初始化..侧滑菜单
-        val rv_menu = slidingMenu!!.findViewById<View>(R.id.rv_menu) as RecyclerView
-        //2.找到布局管理器
-        rv_menu.layoutManager = LinearLayoutManager(this)
-        //3、边栏适配器添加数据
-        adapter = MenuAdapter(this, newsCenterMenuBeanList)
-        rv_menu.adapter = adapter
-    }
+
 
     private fun initView() {
         vp = findViewById<View>(R.id.vp) as ViewPager

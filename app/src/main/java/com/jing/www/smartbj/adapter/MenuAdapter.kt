@@ -20,7 +20,8 @@ import com.jing.www.smartbj.bean.NewsCenterBean
 /**
  * Created by Administrator on 2017/2/7.
  */
-class MenuAdapter     //private NewsCenterBean.NewsCenterMenuBean newsCenterMenuBean;
+class MenuAdapter
+//private NewsCenterBean.NewsCenterMenuBean newsCenterMenuBean;
 (var context: Context,var NewsCenterMenuBeanList: List<NewsCenterBean.NewsCenterMenuBean>?) : RecyclerView.Adapter<MenuAdapter.MyViewHolder>() {
     private var selectedPosition = 0
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -32,7 +33,7 @@ class MenuAdapter     //private NewsCenterBean.NewsCenterMenuBean newsCenterMenu
 
     override fun onBindViewHolder(holder: MyViewHolder, @SuppressLint("RecyclerView") position: Int) {
         val viewHolder = holder as MyViewHolder?
-        val newsCenterMenuBean = NewsCenterMenuBeanList!![position]
+      /*  val newsCenterMenuBean = NewsCenterMenuBeanList!![position]
         viewHolder!!.tvMenuTitle.text = newsCenterMenuBean.title
         if (selectedPosition == position) {
             viewHolder.ivArrow.setImageResource(R.drawable.menu_arr_select)
@@ -40,8 +41,8 @@ class MenuAdapter     //private NewsCenterBean.NewsCenterMenuBean newsCenterMenu
         } else {
             viewHolder.ivArrow.setImageResource(R.drawable.menu_arr_normal)
             viewHolder.tvMenuTitle.setTextColor(Color.WHITE)
-        }
-        viewHolder.itemView.setOnClickListener {
+        }*/
+     /*   viewHolder.itemView.setOnClickListener { item点击事件
             if (selectedPosition != position) {
                 selectedPosition = position
                 notifyDataSetChanged()
@@ -50,19 +51,22 @@ class MenuAdapter     //private NewsCenterBean.NewsCenterMenuBean newsCenterMenu
                 baseFragment.setTitle(newsCenterMenuBean.title) //侧边栏的点击事件
             }
             (context as MainActivity).slidingMenu!!.toggle()
-        }
+        }*/
     }
 
     override fun getItemCount(): Int {
-        return if (NewsCenterMenuBeanList != null) NewsCenterMenuBeanList!!.size else 0
+//        return if (NewsCenterMenuBeanList != null) NewsCenterMenuBeanList!!.size else 0
+        return 5;
     }
 
  class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var ivArrow: ImageView
-        var tvMenuTitle: TextView
+        var photo: ImageView
+        var tvMenuName: TextView
+        var tvMenuTime: TextView
         init {
-            ivArrow = view.findViewById<View>(R.id.iv_arrow) as ImageView
-            tvMenuTitle = view.findViewById<View>(R.id.tv_menu_title) as TextView
+            photo = view.findViewById<View>(R.id.iv_menu) as ImageView
+            tvMenuName = view.findViewById<View>(R.id.menuName) as TextView
+            tvMenuTime = view.findViewById<View>(R.id.createTime) as TextView
         }
     }
 
