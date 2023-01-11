@@ -7,7 +7,7 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:src="@drawable/splash_horse_newyear"
+        android:src="@drawable/splash_rabbit"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </RelativeLayout>

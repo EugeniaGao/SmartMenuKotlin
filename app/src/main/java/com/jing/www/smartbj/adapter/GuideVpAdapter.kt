@@ -2,9 +2,7 @@ package com.jing.www.smartbj.adapter
 
 
 import android.view.ViewGroup
-
 import androidx.viewpager.widget.PagerAdapter
-
 import android.view.View
 import android.widget.*
 

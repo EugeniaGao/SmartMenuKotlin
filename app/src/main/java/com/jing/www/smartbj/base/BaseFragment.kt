@@ -16,23 +16,20 @@ import androidx.fragment.app.Fragment
 /**
  * Created by Administrator on 2017/2/6.
  */
-abstract class BaseFragment : Fragment(), View.OnClickListener {
+abstract class BaseFragment : Fragment(){
     private var title: TextView? = null
-    private var menu: ImageButton? = null
-    private var type: ImageButton? = null
+
     private var frameContaner: FrameLayout? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.base_fragment_activity, container, false)
         title = view.findViewById<View>(R.id.tv_title) as TextView
-        menu = view.findViewById<View>(R.id.ib_menu) as ImageButton
-        type = view.findViewById<View>(R.id.ib_type) as ImageButton
         frameContaner = view.findViewById<View>(R.id.base_fl_container) as FrameLayout
         initEvent()
         return view
     }
 
     private fun initEvent() {
-        menu!!.setOnClickListener(this)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,15 +46,6 @@ abstract class BaseFragment : Fragment(), View.OnClickListener {
         title!!.text = text
     }
 
-    //设置menu可见性
-    fun setMenu(boo: Boolean) {
-        menu!!.visibility = if (boo) View.VISIBLE else View.GONE
-    }
-
-    //设置type可见性
-    fun setType(boo: Boolean) {
-        type!!.visibility = if (boo) View.VISIBLE else View.GONE
-    }
 
     //创建内容
     abstract fun createContent(): View?
@@ -68,9 +56,5 @@ abstract class BaseFragment : Fragment(), View.OnClickListener {
         frameContaner!!.addView(view)
     }
 
-    //点击侧滑菜单
-    override fun onClick(v: View) {
-        //侧滑菜单在activity中
-        (activity as MainActivity?)!!.slidingMenu!!.toggle()
-    }
+
 }

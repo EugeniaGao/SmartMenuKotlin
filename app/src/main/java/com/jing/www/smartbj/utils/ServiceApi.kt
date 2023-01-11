@@ -1,11 +1,8 @@
 package com.jing.www.smartbj.utils
 
-
 import com.jing.www.smartbj.bean.NewsCenterTabBean
-
 import retrofit2.http.POST
 import okhttp3.RequestBody
-
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Headers

@@ -2,7 +2,6 @@ package com.jing.www.smartbj.utils
 
 
 import android.content.Context
-
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader

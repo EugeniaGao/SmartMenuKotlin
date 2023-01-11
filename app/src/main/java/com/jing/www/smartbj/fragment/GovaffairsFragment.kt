@@ -10,9 +10,7 @@ import android.view.View
  */
 class GovaffairsFragment : BaseFragment() {
     override fun initTitle() {
-        setMenu(true)
         setTitle("热搜")
-        setType(false)
     }
 
     override fun createContent(): View? {

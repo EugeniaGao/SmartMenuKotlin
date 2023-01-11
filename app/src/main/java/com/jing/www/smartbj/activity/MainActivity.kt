@@ -33,9 +33,6 @@ import java.util.ArrayList
 class MainActivity : FragmentActivity(), RadioGroup.OnCheckedChangeListener {
     private var vp: ViewPager? = null
     private var rb_home: RadioButton? = null
-    private var rb_newscenter: RadioButton? = null
-    private var rb_smartservice: RadioButton? = null
-    private var rb_govaffairs: RadioButton? = null
     private var rb_setting: RadioButton? = null
     private var rg_tab: RadioGroup? = null
     private var fragments: MutableList<Fragment>? = null
@@ -47,7 +44,7 @@ class MainActivity : FragmentActivity(), RadioGroup.OnCheckedChangeListener {
     @JvmName("setNewsCenterMenuBeanList1")
     fun setNewsCenterMenuBeanList(newsCenterMenuBeanList: List<NewsCenterBean.NewsCenterMenuBean>?) {
         this.newsCenterMenuBeanList = newsCenterMenuBeanList
-        initRecycleView()
+//        initRecycleView()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +53,6 @@ class MainActivity : FragmentActivity(), RadioGroup.OnCheckedChangeListener {
         initView()
         initEvent()
         initViewPager()
-        initSlidingMenu()
     }
 
     private fun initRecycleView() {
@@ -73,9 +69,6 @@ class MainActivity : FragmentActivity(), RadioGroup.OnCheckedChangeListener {
         vp = findViewById<View>(R.id.vp) as ViewPager
         rg_tab = findViewById<View>(R.id.rg) as RadioGroup
         rb_home = findViewById<View>(R.id.rb_tab_home) as RadioButton
-        rb_newscenter = findViewById<View>(R.id.rb_tab_newscenter) as RadioButton
-        rb_smartservice = findViewById<View>(R.id.rb_tab_smartservice) as RadioButton
-        rb_govaffairs = findViewById<View>(R.id.rb_tab_govaffairs) as RadioButton
         rb_setting = findViewById<View>(R.id.rb_tab_setting) as RadioButton
     }
 
@@ -85,10 +78,7 @@ class MainActivity : FragmentActivity(), RadioGroup.OnCheckedChangeListener {
 
     private fun initViewPager() {
         fragments = ArrayList()
-        (fragments as ArrayList<Fragment>).add(HomeTabFragment())
         (fragments as ArrayList<Fragment>).add(NewsCenterFragment())
-        (fragments as ArrayList<Fragment>).add(SmartServiceTabFragment())
-        (fragments as ArrayList<Fragment>).add(GovaffairsFragment())
         (fragments as ArrayList<Fragment>).add(SettingTabFragment())
         vp!!.adapter = TabVpAdapter(supportFragmentManager, fragments as ArrayList<Fragment>)
     }
@@ -97,24 +87,13 @@ class MainActivity : FragmentActivity(), RadioGroup.OnCheckedChangeListener {
         var item = 0
         when (checkedId) {
             R.id.rb_tab_home -> {
-                slidingMenu!!.touchModeAbove = SlidingMenu.TOUCHMODE_NONE
+//                slidingMenu!!.touchModeAbove = SlidingMenu.TOUCHMODE_NONE
                 item = 0
             }
-            R.id.rb_tab_newscenter -> {
-                item = 1
-                slidingMenu!!.touchModeAbove = SlidingMenu.TOUCHMODE_FULLSCREEN
-            }
-            R.id.rb_tab_smartservice -> {
-                slidingMenu!!.touchModeAbove = SlidingMenu.TOUCHMODE_FULLSCREEN
-                item = 2
-            }
-            R.id.rb_tab_govaffairs -> {
-                item = 3
-                slidingMenu!!.touchModeAbove = SlidingMenu.TOUCHMODE_FULLSCREEN
-            }
+
             R.id.rb_tab_setting -> {
-                slidingMenu!!.touchModeAbove = SlidingMenu.TOUCHMODE_NONE
-                item = 4
+//                slidingMenu!!.touchModeAbove = SlidingMenu.TOUCHMODE_NONE
+                item = 1
             }
         }
         vp!!.setCurrentItem(item, false)
@@ -127,14 +106,8 @@ class MainActivity : FragmentActivity(), RadioGroup.OnCheckedChangeListener {
         }
     }
 
-    private fun initSlidingMenu() {
-        slidingMenu = SlidingMenu(this)
-        slidingMenu!!.mode = SlidingMenu.LEFT
-        slidingMenu!!.touchModeAbove = SlidingMenu.TOUCHMODE_FULLSCREEN
-        slidingMenu!!.setBehindWidth(150)
-        slidingMenu!!.attachToActivity(this, SlidingMenu.SLIDING_CONTENT)
-        slidingMenu!!.setMenu(R.layout.sliding_menu_activity)
-    }//2.利用集合获取当前fragment//1.利用容器获取当前fragment的id
+
+    //2.利用集合获取当前fragment//1.利用容器获取当前fragment的id
 
     //接口回调独立方法
     val currentTabFragment: BaseFragment

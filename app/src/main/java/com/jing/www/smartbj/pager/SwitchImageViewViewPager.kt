@@ -30,7 +30,7 @@ class SwitchImageViewViewPager : ViewPager {
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
-        when (ev.action) {
+       /* when (ev.action) {
             MotionEvent.ACTION_DOWN -> {
                 tabPager!!.stopSwitch()
                 startX = ev.x
@@ -54,7 +54,7 @@ class SwitchImageViewViewPager : ViewPager {
                 }
                 tabPager!!.startSwitch()
             }
-        }
+        }*/
         return super.dispatchTouchEvent(ev)
     }
 }

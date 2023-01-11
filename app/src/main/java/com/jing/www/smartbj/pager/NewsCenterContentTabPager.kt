@@ -20,23 +20,20 @@ import java.util.ArrayList
 /**
  * Created by Administrator on 2017/2/12.
  * 加载新闻中心新闻主体内容的碎片
+ * 改造成，全部是recyclerView的样式
  */
 class NewsCenterContentTabPager(  //添加布局,在构造时候就初始化
-        var context: Context?) : ViewPager.OnPageChangeListener {
+        var context: Context?) {
     //1.创建handler
     private val mHandler = Handler()
     private var hasSwitch = false
     var view: View
-    var vpSwitchImage: SwitchImageViewViewPager? = null
-    var tvTitle: TextView? = null
-    var llPointContainer: LinearLayout? = null
+
     private var newsCenterTabBean: NewsCenterTabBean? = null
     private var imgViews: MutableList<ImageView>? = null
     private fun initView(): View {
         val view = LayoutInflater.from(context).inflate(R.layout.newscenter_content_tab, null)
-        vpSwitchImage = view.findViewById<View>(R.id.vp_switch_image) as SwitchImageViewViewPager
-        tvTitle = view.findViewById<View>(R.id.vp_switch_image) as TextView
-        llPointContainer = view.findViewById<View>(R.id.vp_switch_image) as LinearLayout
+
         return view
     }
 
@@ -62,23 +59,23 @@ class NewsCenterContentTabPager(  //添加布局,在构造时候就初始化
 //                });
     }
 
-    fun processData(json: String?) {
+  /*  fun processData(json: String?) {
         val gson = Gson()
         newsCenterTabBean = gson.fromJson(json, NewsCenterTabBean::class.java)
         //加载数据要将数据绑定到对应的控件上
         bindDataToView()
         //把当前的NewsCenterContentTabPager对象传递给SwitchImageViewViewPager
         vpSwitchImage!!.setTabPager(this)
-    }
+    }*/
 
-    private fun bindDataToView() {
+/*    private fun bindDataToView() {
         initSwitchImgView()
         initPoint()
     }
 
-    /**
+    *//**
      * 创建小圆点
-     */
+     *//*
     private fun initPoint() {
         llPointContainer!!.removeAllViews()
         for (i in newsCenterTabBean!!.data!!.topnews!!.indices) {
@@ -119,9 +116,9 @@ class NewsCenterContentTabPager(  //添加布局,在构造时候就初始化
         //设置文字的改变监听
         vpSwitchImage!!.addOnPageChangeListener(this)
         vpSwitchImage!!.setCurrentItem(1, false)
-    }
+    }*/
 
-    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+   /* override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
     override fun onPageSelected(position: Int) {
         //动态改变轮播文字
         //修正文字下表
@@ -195,7 +192,7 @@ class NewsCenterContentTabPager(  //添加布局,在构造时候就初始化
             mHandler.postDelayed(this, 3000)
         }
     }
-
+*/
     companion object {
         private const val TAG = "tag"
     }

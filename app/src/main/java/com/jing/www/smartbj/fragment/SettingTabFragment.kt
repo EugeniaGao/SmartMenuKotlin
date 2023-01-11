@@ -11,9 +11,9 @@ import android.view.View
  */
 class SettingTabFragment : BaseFragment() {
     override fun initTitle() {
-        setMenu(false)
+
         setTitle("设置")
-        setType(false)
+
     }
 
     override fun createContent(): View? {

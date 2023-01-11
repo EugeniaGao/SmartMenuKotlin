@@ -12,9 +12,9 @@ import android.view.View
  */
 class SmartServiceTabFragment : BaseFragment() {
     override fun initTitle() {
-        setMenu(true)
+
         setTitle("广场")
-        setType(false)
+
     }
 
     override fun createContent(): View? {

@@ -45,7 +45,7 @@ class NewsCenterBean {
         var weekurl: String? = null
         var children: List<NewsCenterNewsTabBean>? = null
     }
-
+//指示器标题
     class NewsCenterNewsTabBean {
         /**
          * id : 10007
