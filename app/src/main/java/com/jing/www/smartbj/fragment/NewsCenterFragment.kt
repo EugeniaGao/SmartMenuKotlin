@@ -12,6 +12,8 @@ import android.view.View
 import com.jing.www.smartbj.bean.NewsCenterBean
 import com.viewpagerindicator.TabPageIndicator
 import com.jing.www.smartbj.adapter.NewsCenterTabVPAdapter
+import com.jing.www.smartbj.bean.MenuBean
+import com.jing.www.smartbj.bean.MenuManager
 import java.util.ArrayList
 
 //迁移后包改变
@@ -62,7 +64,9 @@ override fun initTitle() {
         views = ArrayList<NewsCenterContentTabPager?>()
         val list= listOf("粥类","盖饭","面食","炒菜","炖菜","靓汤","轻食")//初始化水果集合
         for (item in list){
-            val tabPager = NewsCenterContentTabPager(getContext())
+            var menuBeanByType = MenuManager.getMenuByType(item) as MutableList<MenuBean>?
+            val tabPager = NewsCenterContentTabPager(getContext(),menuBeanByType)
+
             (views as ArrayList<NewsCenterContentTabPager?>).add(tabPager)
         }
         val newsCenterTabVPAdapter = NewsCenterTabVPAdapter(views, list)

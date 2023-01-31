@@ -18,7 +18,7 @@
         android:id="@+id/rg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bottom_tab_bg"
+        android:background="#F6BDBD"
         android:orientation="horizontal">
 
         <RadioButton
@@ -44,6 +44,10 @@
             android:drawableTop="@drawable/govaffairs_tab_selector"
             android:text="热搜"
             style="@style/tab_rb_style" />-->
+        <RadioButton
+            android:id="@+id/rb_tab_add"
+            android:drawableTop="@drawable/add"
+            style="@style/tab_rb_style" />
         <RadioButton
             android:id="@+id/rb_tab_setting"
             android:drawableTop="@drawable/setting_tab_selector"
