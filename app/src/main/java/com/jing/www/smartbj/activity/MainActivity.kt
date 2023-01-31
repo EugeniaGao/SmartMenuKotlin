@@ -3,28 +3,19 @@ package com.jing.www.smartbj.activity
 
 import android.os.Bundle
 import com.jing.www.smartbj.R
-
 import android.view.View
 import android.widget.RadioButton
-
 import android.widget.RadioGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu
-import com.jing.www.smartbj.adapter.MenuAdapter
 import com.jing.www.smartbj.bean.NewsCenterBean
-import com.jing.www.smartbj.fragment.HomeTabFragment
 import com.jing.www.smartbj.fragment.NewsCenterFragment
-import com.jing.www.smartbj.fragment.SmartServiceTabFragment
-import com.jing.www.smartbj.fragment.GovaffairsFragment
 import com.jing.www.smartbj.fragment.SettingTabFragment
 import com.jing.www.smartbj.adapter.TabVpAdapter
 import com.jing.www.smartbj.base.BaseFragment
 import com.jing.www.smartbj.base.BaseLoadNetDataOperator
-import com.jing.www.smartbj.beannew.SecondTabBean
 import java.util.ArrayList
 
 /**
