@@ -33,25 +33,7 @@ class MenuAdapter
 
     override fun onBindViewHolder(holder: MyViewHolder, @SuppressLint("RecyclerView") position: Int) {
         val viewHolder = holder as MyViewHolder?
-      /*  val newsCenterMenuBean = NewsCenterMenuBeanList!![position]
-        viewHolder!!.tvMenuTitle.text = newsCenterMenuBean.title
-        if (selectedPosition == position) {
-            viewHolder.ivArrow.setImageResource(R.drawable.menu_arr_select)
-            viewHolder.tvMenuTitle.setTextColor(Color.RED)
-        } else {
-            viewHolder.ivArrow.setImageResource(R.drawable.menu_arr_normal)
-            viewHolder.tvMenuTitle.setTextColor(Color.WHITE)
-        }*/
-     /*   viewHolder.itemView.setOnClickListener { item点击事件
-            if (selectedPosition != position) {
-                selectedPosition = position
-                notifyDataSetChanged()
-                //修改对应的标题
-                val baseFragment = (context as MainActivity).currentTabFragment
-                baseFragment.setTitle(newsCenterMenuBean.title) //侧边栏的点击事件
-            }
-            (context as MainActivity).slidingMenu!!.toggle()
-        }*/
+
     }
 
     override fun getItemCount(): Int {

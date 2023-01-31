@@ -13,20 +13,39 @@
     android:layout_width="match_parent">
 
 </ImageView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="0dp"
+    android:layout_weight="1.5">
     <TextView
         android:id="@+id/menuName"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
+        android:gravity="center"
         android:text="红烧肉"
+        android:textStyle="bold"
+        android:textColor="@color/vpi__background_holo_dark"
         tools:ignore="Suspicious0dp" />
 
+
+    <TextView
+        android:id="@+id/descipt"
+        android:text="评价：口感不错"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        />
     <TextView
         android:id="@+id/createTime"
         android:text="2023年5月1日"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         />
+</LinearLayout>
 
 </LinearLayout>
